@@ -2,7 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 import { useState } from "react";
-import { createMessage } from "@/app/actions";
+import { createMessage } from "@/app/(root)/actions";
 import TextareaAutosize from "react-textarea-autosize";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
