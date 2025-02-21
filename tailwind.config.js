@@ -89,7 +89,7 @@ module.exports = {
         "intro-scroll-outside": "intro-scroll-outside 2s ease infinite",
       },
       backgroundImage: {
-        "bg-image": "url('../public/images/bg.webp')",
+        "bg-image": "url('/images/bg.webp')",
       },
     },
   },
