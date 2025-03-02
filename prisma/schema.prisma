@@ -22,3 +22,14 @@ model Message {
   userName  String
   userImg   String
 }
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  title       String
+  summary     String
+  image       String
+  author      String
+  publishedAt DateTime @db.Date
+  content     String
+  createdAt   DateTime @default(now())
+}

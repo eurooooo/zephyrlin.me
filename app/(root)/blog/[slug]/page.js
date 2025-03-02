@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogBySlug, getBlogs } from "@/lib/blog";
+import MdPreview from "@/components/MdPreview";
 
 export default async function Blog({ params }) {
   const { slug } = params;
@@ -52,8 +52,11 @@ export default async function Blog({ params }) {
           <p className="">{summary}</p>
         </header>
 
-        <main className="mt-16 prose max-w-none prose-invert prose-p:text-foreground prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground prose-strong:text-foreground prose-strong:font-bold prose-a:text-blue-400 prose-a:opacity-80 prose-code:text-foreground prose-img:opacity-90 prose-p:tracking-tight prose-p:text-sm prose-li:text-sm">
+        {/* <main className="mt-16 prose max-w-none prose-invert prose-p:text-foreground prose-h1:text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-h4:text-foreground prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground prose-strong:text-foreground prose-strong:font-bold prose-a:text-blue-400 prose-a:opacity-80 prose-code:text-foreground prose-img:opacity-90 prose-p:tracking-tight prose-p:text-sm prose-li:text-sm">
           <MDXRemote source={content} />
+        </main> */}
+        <main className="mt-16">
+          <MdPreview source={content} />
         </main>
       </article>
     </section>

@@ -1,7 +1,5 @@
-import { Roboto_Mono } from "next/font/google";
-
-const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
+import ThemeToggler from "@/components/ThemeToggler";
 
 export default function layout({ children }) {
-  return <body className={`${roboto_mono.className} `}>{children}</body>;
+  return <ThemeToggler>{children}</ThemeToggler>;
 }
