@@ -12,7 +12,7 @@ export default function Blogs({ blogs }) {
             >
               <div
                 href={`/blog/${blog.slug}`}
-                className="relative aspect-[48/27] w-full sm:w-80 rounded-2xl shrink-0"
+                className="relative aspect-48/27 w-full sm:w-80 rounded-2xl shrink-0"
               >
                 <Image
                   src={blog.image}
@@ -22,7 +22,7 @@ export default function Blogs({ blogs }) {
                 />
               </div>
 
-              <div className="flex flex-col justify-between flex-grow p-4">
+              <div className="flex flex-col justify-between grow p-4">
                 <div>
                   <h2 className="mb-2 font-bold">{blog.title}</h2>
                   <p className="text-sm text-muted-foreground">

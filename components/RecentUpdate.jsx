@@ -16,7 +16,7 @@ export default function RecentUpdate({ blogs }) {
               <div className="relative rounded-2xl hover:shadow-[0_0px_2px_rgb(140,140,140)] shadow-[0_0px_1.2px_rgb(140,140,140)] opacity-70 hover:opacity-90">
                 <div
                   href={`/blog/${blog.slug}`}
-                  className="relative aspect-[240/135] w-full "
+                  className="relative aspect-240/135 w-full "
                 >
                   <Image
                     src={blog.image}
@@ -31,7 +31,7 @@ export default function RecentUpdate({ blogs }) {
                   <p className="mb-4 text-sm text-muted-foreground">
                     {blog.publishedAt ?? ""} | {blog.tag}
                   </p>
-                  <p className="text-sm text-transparent bg-gradient-to-l from-muted-foreground via-foreground to-muted-foreground bg-clip-text">
+                  <p className="text-sm text-transparent bg-linear-to-l from-muted-foreground via-foreground to-muted-foreground bg-clip-text">
                     {blog.summary}
                   </p>
                 </div>

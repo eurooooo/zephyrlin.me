@@ -10,7 +10,7 @@ export default async function Messages() {
       {messages.map((message, index) => (
         <li key={message.id}>
           <div className="flex items-start gap-3 my-1">
-            <div className="flex flex-col items-center flex-shrink-0 gap-2">
+            <div className="flex flex-col items-center shrink-0 gap-2">
               <Image
                 src={message.userImg}
                 width={40}

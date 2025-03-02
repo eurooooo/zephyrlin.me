@@ -36,10 +36,10 @@ function MessageInput({ text, setText, isEmpty }) {
   const { pending } = useFormStatus();
 
   return (
-    <div className="flex flex-col flex-grow gap-4 justify-between">
+    <div className="flex flex-col grow gap-4 justify-between">
       <TextareaAutosize
         disabled={pending}
-        className="p-0 w-full text-sm bg-transparent border-none outline-none resize-none placeholder-muted-foreground text-muted-foreground disabled:opacity-50"
+        className="p-0 w-full text-sm bg-transparent border-none outline-hidden resize-none placeholder-muted-foreground text-muted-foreground disabled:opacity-50"
         placeholder="Leave a message"
         name="message"
         value={text}

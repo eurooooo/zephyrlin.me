@@ -1,43 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* @config '../tailwind.config.js'; */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --background: hsl(188.6 22.6% 6.1%);
+  --foreground: hsl(180 1.7% 76.5%);
+  --card: hsl(188.6 22.6% 6.1%);
+  --card-foreground: hsl(180 1.7% 76.5%);
+  --popover: hsl(188.6 22.6% 6.1%);
+  --popover-foreground: hsl(180 1.7% 76.5%);
+  --muted: hsl(0 0% 8.5%);
+  --muted-foreground: hsl(0 0% 55%);
+  --primary: hsl(180 1.7% 76.5%);
+  --primary-foreground: hsl(186.7 22% 8%);
+  --secondary: hsla(0 0% 94.9% / 5%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --accent: hsl(0 0% 14.5%);
+  --accent-foreground: hsl(180 1.7% 76.5%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(0 0% 55%);
+  --input: hsl(0 0% 55%);
+  --ring: hsl(212.7 26.8% 83.9%);
+
+  --radius: 0.75rem;
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+}
 
 @layer base {
-  :root {
-    --background: 188.6 22.6% 6.1%;
-    --foreground: 180 1.7% 76.5%;
-    --card: 188.6 22.6% 6.1%;
-    --card-foreground: 180 1.7% 76.5%;
-    --popover: 188.6 22.6% 6.1%;
-    --popover-foreground: 180 1.7% 76.5%;
-    --muted: 0 0% 8.5%;
-    --muted-foreground: 0 0% 55%;
-    --primary: 180 1.7% 76.5%;
-    --primary-foreground: 186.7 22% 8%;
-    --secondary: 0 0% 94.9% / 5%;
-
-    /* not finished */
-    --secondary-foreground: 210 40% 98%;
-    --accent: 0 0% 14.5%;
-    --accent-foreground: 180 1.7% 76.5%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    /*  */
-
-    --border: 0 0% 55%;
-    --input: 0 0% 55%;
-
-    /* not finished */
-    --ring: 212.7 26.8% 83.9%;
-    /*  */
-
-    --radius: 0.75rem;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
   * {
     @apply border-border;
   }
@@ -45,6 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 .skillsIcon {
   @apply inline-block w-7 h-7;
 }
