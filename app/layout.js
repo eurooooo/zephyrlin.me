@@ -1,5 +1,10 @@
 import "@/styles/global.css";
+
+import ClerkProviderWrapper from "@/components/ClerkProviderWrapper";
 import { Roboto_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "sonner";
 
 const roboto_mono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -15,7 +20,15 @@ export default function RootLayout({ children }) {
       lang="en"
       className="scrollbar-thin scrollbar-thumb-muted-foreground scrollbar-track-muted dark"
     >
-      <body className={`${roboto_mono.className}`}>{children}</body>
+      <ClerkProviderWrapper>
+        <body className={`${roboto_mono.className}`}>
+          {children}
+
+          <Analytics />
+          <SpeedInsights />
+          <Toaster />
+        </body>
+      </ClerkProviderWrapper>
     </html>
   );
 }
