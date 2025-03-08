@@ -6,6 +6,7 @@ const nextConfig = {
       { hostname: "cdn.sanity.io" },
       { hostname: "i.scdn.co" },
       { hostname: "localhost" },
+      { hostname: "avatars.githubusercontent.com" },
     ],
   },
   pageExtensions: ["js", "jsx", "mdx"],

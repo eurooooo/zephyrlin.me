@@ -3,11 +3,10 @@
 import { usePathname } from "next/navigation";
 import Avatar from "./Avatar";
 import Navbar from "./Navbar";
-import SignInAndOut from "./SignIn";
 import GithubIcon from "@/public/icons/GithubIcon";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header({ children }) {
   const pathname = usePathname();
   const page = pathname.split("/").slice(0, 2).join("/");
 
@@ -25,7 +24,7 @@ export default function Header() {
         >
           <GithubIcon />
         </Link>
-        <SignInAndOut pathname={pathname} />
+        {children}
       </div>
     </header>
   );

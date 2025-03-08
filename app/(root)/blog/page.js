@@ -2,7 +2,6 @@ import Blogs from "@/components/Blogs";
 import Description from "@/components/Description";
 import MotionDivWrapper from "@/components/MotionDivWrapper";
 import { getBlogs } from "@/lib/blog";
-
 export default async function BlogPage() {
   const blogs = await getBlogs();
 
