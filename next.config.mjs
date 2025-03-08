@@ -7,6 +7,7 @@ const nextConfig = {
       { hostname: "i.scdn.co" },
       { hostname: "localhost" },
       { hostname: "avatars.githubusercontent.com" },
+      { hostname: "lh3.googleusercontent.com" },
     ],
   },
   pageExtensions: ["js", "jsx", "mdx"],
