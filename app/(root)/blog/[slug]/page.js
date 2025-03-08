@@ -5,7 +5,8 @@ import Image from "next/image";
 import { getBlogBySlug, getBlogs } from "@/lib/blog";
 import MdPreview from "@/components/MdPreview";
 
-export default async function Blog({ params }) {
+export default async function Blog(props) {
+  const params = await props.params;
   const { slug } = params;
   const blog = await getBlogBySlug(slug);
 
