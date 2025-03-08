@@ -115,3 +115,7 @@
 .wmde-markdown ul {
   list-style: disc !important;
 }
+
+button:hover {
+  cursor: pointer;
+}

@@ -1,17 +1,28 @@
-import { signInAction, signOutAction } from "@/lib/action";
-import { auth } from "@/app/auth";
+import { auth, signIn, signOut } from "@/app/auth";
 import { Button } from "./ui/button";
-import SignIn from "./SignIn";
 
 export default async function AuthjsSignIn() {
   const session = await auth();
 
-  if (!session?.user) return <SignIn />;
-
-  // console.log(session);
+  if (!session?.user)
+    return (
+      <form
+        action={async () => {
+          "use server";
+          await signIn("github");
+        }}
+      >
+        <Button>Sign In</Button>
+      </form>
+    );
 
   return (
-    <form action={signOutAction}>
+    <form
+      action={async () => {
+        "use server";
+        await signOut();
+      }}
+    >
       <Button type="submit">Sign Out</Button>
     </form>
   );

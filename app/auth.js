@@ -17,8 +17,4 @@ export const providerMap = providers
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Google, GitHub],
-  pages: {
-    signIn: "/login",
-  },
-  basePath: "/auth",
 });

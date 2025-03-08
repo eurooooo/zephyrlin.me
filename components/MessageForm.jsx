@@ -3,7 +3,6 @@
 import { useFormStatus } from "react-dom";
 import { useState } from "react";
 import { createMessage } from "@/lib/action";
-import TextareaAutosize from "react-textarea-autosize";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
 
@@ -37,20 +36,20 @@ function MessageInput({ text, setText, isEmpty }) {
 
   return (
     <div className="flex flex-col grow gap-4 justify-between">
-      <TextareaAutosize
+      <textarea
         disabled={pending}
         className="p-0 w-full text-sm bg-transparent border-none outline-hidden resize-none placeholder-muted-foreground text-muted-foreground disabled:opacity-50"
         placeholder="Leave a message"
         name="message"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        maxLength={500}
+        maxLength={100}
       />
 
       <div
         className={`${isEmpty ? "opacity-0" : "opacity-100"} transition-opacity duration-1000 text-xs text-muted-foreground flex items-center justify-between gap-2`}
       >
-        <span>{text.length}/500 </span>
+        <span>{text.length}/100 </span>
         <button
           disabled={pending || isEmpty}
           type="submit"
