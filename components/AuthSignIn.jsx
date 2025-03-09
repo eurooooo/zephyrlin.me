@@ -8,5 +8,11 @@ export default async function AuthSignIn() {
 
   if (!session?.user) return <SignIn />;
 
-  return <SignOut image={session.user.image} />;
+  return (
+    <SignOut
+      image={session.user.image}
+      name={session.user.name}
+      email={session.user.email}
+    />
+  );
 }

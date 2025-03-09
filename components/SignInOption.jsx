@@ -8,21 +8,25 @@ import Spinner from "./Spinner";
 export default function SignInOption({ provider, children }) {
   const signIn = signInAction.bind(null, provider);
   return (
-    <div className="flex w-full bg-muted-foreground px-2 rounded-md h-9">
-      <Form action={signIn} className="w-full flex justify-center">
-        <SubmitButton>{children}</SubmitButton>
-      </Form>
-    </div>
+    <>
+      <div className="flex w-full bg-secondary px-2 rounded-md h-9">
+        <Form action={signIn} className="w-full">
+          <SubmitButton provider={provider}>{children}</SubmitButton>
+        </Form>
+      </div>
+    </>
   );
 }
 
-function SubmitButton({ children }) {
+function SubmitButton({ provider, children }) {
   const { pending } = useFormStatus();
 
   return (
-    <button className="w-full flex items-center gap-10">
-      {pending ? <Spinner /> : children}
-      Sign in with Google
-    </button>
+    <>
+      <button className="w-full flex items-center">
+        <div className="w-20">{pending ? <Spinner /> : children}</div>
+        <div>Sign in with {provider}</div>
+      </button>
+    </>
   );
 }
