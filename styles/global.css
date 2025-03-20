@@ -107,6 +107,10 @@
   @apply inline-block w-7 h-7;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* markdown editor */
 .wmde-markdown ol {
   list-style: auto !important;
@@ -114,8 +118,4 @@
 
 .wmde-markdown ul {
   list-style: disc !important;
-}
-
-button:hover {
-  cursor: pointer;
 }

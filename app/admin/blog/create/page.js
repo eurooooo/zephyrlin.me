@@ -6,6 +6,16 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { createBlogPost } from "@/lib/action";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -38,54 +48,84 @@ function HomePage() {
   };
 
   return (
-    <div className="px-24 flex flex-col gap-4">
-      <h1 className="text-2xl">Create a New Blog Post</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="border p-2"
-        />
-        <textarea
-          placeholder="Summary"
-          value={summary}
-          onChange={(e) => setSummary(e.target.value)}
-          className="border p-2"
-        />
-        <input
-          type="text"
-          placeholder="Image URL"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          className="border p-2"
-        />
-        <input
-          type="text"
-          placeholder="Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          className="border p-2"
-        />
-        <input
-          type="date"
-          value={publishedAt}
-          onChange={(e) => setPublishedAt(e.target.value)}
-          className="border p-2"
-        />
-        <div>
-          <MDEditor
-            value={content}
-            onChange={setContent}
-            height={600}
-            className=""
-          />
-        </div>
-        <Button type="submit" className="">
-          Submit
-        </Button>
-      </form>
+    <div className="flex justify-center items-center min-h-screen p-6 bg-gray-100">
+      <Card className="w-full  shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-center text-2xl font-bold">
+            Create a New Blog Post
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {/* 第一行：Title 和 Author */}
+            <div className="grid grid-cols-6 gap-4">
+              <div className="col-span-3">
+                <Label htmlFor="title">Title</Label>
+                <Input
+                  id="title"
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Enter the title"
+                />
+              </div>
+              <div>
+                <Label htmlFor="author">Author</Label>
+                <Input
+                  id="author"
+                  type="text"
+                  value={author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                  placeholder="Author name"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="image">Image URL</Label>
+                <Input
+                  id="image"
+                  type="text"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                  placeholder="Paste image URL"
+                />
+              </div>
+              <div>
+                <Label htmlFor="publishedAt">Publish Date</Label>
+                <Input
+                  id="publishedAt"
+                  type="date"
+                  value={publishedAt}
+                  onChange={(e) => setPublishedAt(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* 第二行：Summary */}
+            <div>
+              <Label htmlFor="summary">Summary</Label>
+              <Textarea
+                id="summary"
+                value={summary}
+                onChange={(e) => setSummary(e.target.value)}
+                placeholder="Write a short summary"
+                className="resize-none"
+                maxLength={100}
+              />
+            </div>
+            {/* 内容编辑器 */}
+            <div>
+              <Label>Content</Label>
+              <MDEditor value={content} onChange={setContent} height={300} />
+            </div>
+
+            {/* 提交按钮 */}
+            <Button type="submit" className="w-full">
+              Submit
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 }
