@@ -11,6 +11,9 @@ const nextConfig = {
     ],
   },
   pageExtensions: ["js", "jsx", "mdx"],
+  experimental: {
+    ppr: "incremental",
+  },
 };
 
 export default nextConfig;
