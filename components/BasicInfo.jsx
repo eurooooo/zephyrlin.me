@@ -4,7 +4,7 @@ export default function BasisInfo() {
       <h2 className="mb-6 ml-2 text-lg text-green-200 opacity-60">
         💡 About Me
       </h2>
-      <ul className="flex flex-col gap-5 pl-6 text-sm list-disc ">
+      <ul className="flex flex-col gap-5 pl-6 text-sm list-disc">
         <li>
           👋 You can call me <span className="font-bold">Zephyr</span>,{" "}
           <span className="font-bold">Zhihao</span> or{" "}
@@ -15,15 +15,23 @@ export default function BasisInfo() {
           🌎 Current Location:{" "}
           <a
             className="font-bold"
-            href="https://en.wikipedia.org/wiki/Minneapolis"
+            href="https://en.wikipedia.org/wiki/Changsha"
             target="_blank"
           >
-            Minneapolis, MN, US
+            Changsha, China
           </a>
           .
         </li>
         <li>
           ✈️ Lived in{" "}
+          <a
+            className="font-bold"
+            href="https://en.wikipedia.org/wiki/Minneapolis"
+            target="_blank"
+          >
+            Minneapolis
+          </a>
+          ,{" "}
           <a
             className="font-bold"
             href="https://en.wikipedia.org/wiki/Amherst,_Massachusetts"
@@ -40,13 +48,6 @@ export default function BasisInfo() {
             Shenzhen
           </a>
           ,{" "}
-          <a
-            className="font-bold"
-            href="https://en.wikipedia.org/wiki/Changsha"
-            target="_blank"
-          >
-            Changsha
-          </a>{" "}
           <a
             className="font-bold"
             href="https://en.wikipedia.org/wiki/Wuhan"
