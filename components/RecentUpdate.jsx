@@ -5,11 +5,11 @@ import Link from "next/link";
 export default function RecentUpdate({ blogs }) {
   return (
     <div className="mt-10">
-      <div className="flex items-center justify-start w-full gap-3 mb-10">
+      <div className="flex gap-3 justify-start items-center mb-10 w-full">
         <Newspaper />
         <span className="text-lg font-semibold">Recent Update</span>
       </div>
-      <ul className="grid w-full grid-cols-1 gap-10">
+      <ul className="grid grid-cols-1 gap-10 w-full">
         {blogs.map((blog) => (
           <li key={blog.slug}>
             <Link href={`/blog/${blog.slug}`}>
@@ -22,16 +22,16 @@ export default function RecentUpdate({ blogs }) {
                     src={blog.image}
                     alt="Blog image"
                     fill
-                    className="object-contain rounded-2xl "
+                    className="object-contain rounded-2xl"
                   />
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-4 rounded-lg backdrop-blur-3xl">
-                  <h2 className="mb-2 font-bold">{blog.title}</h2>
-                  <p className="mb-4 text-sm text-muted-foreground">
+                <div className="absolute right-0 bottom-0 left-0 p-4 rounded-lg backdrop-blur-md bg-black/60 dark:bg-black/70">
+                  <h2 className="mb-2 font-bold text-white">{blog.title}</h2>
+                  <p className="mb-4 text-sm text-gray-300 dark:text-gray-200">
                     {blog.publishedAt ?? ""} | {blog.tag}
                   </p>
-                  <p className="text-sm text-transparent bg-gradient-to-l from-muted-foreground via-foreground to-muted-foreground bg-clip-text">
+                  <p className="text-sm text-gray-200 dark:text-gray-100">
                     {blog.summary}
                   </p>
                 </div>
