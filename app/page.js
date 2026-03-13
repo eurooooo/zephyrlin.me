@@ -30,9 +30,9 @@ export default async function Page() {
         <aside className="lg:w-[680px] w-full lg:sticky lg:h-fit lg:-top-10 flex flex-col gap-12 rounded-2xl ">
           <BasisInfo />
           <SkillsBar />
-          <Suspense fallback={<Skeleton />}>
+          {/* <Suspense fallback={<Skeleton />}>
             <Spotify />
-          </Suspense>
+          </Suspense> */}
         </aside>
       </section>
     </MotionDivWrapper>
